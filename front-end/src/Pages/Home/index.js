@@ -64,8 +64,9 @@ const LogIn = () => {
 
         //Pegar informações gerais do usuário
         api.get("/user", { headers: { "access-token": localStorage.getItem(Token) } }).then((response) => {
-            setName(response.data.user.name)
+            setName(response.data.user.name);
             setIdUser(response.data.user._id);
+            getTasks(response.data.user._id)
         }).catch((error) => {
             handleSnackbar(true, error.response.data.message);
             navigate("/login");
@@ -73,7 +74,7 @@ const LogIn = () => {
 
     }, []);
 
-    useEffect(() => {
+    const getTasks = (idUser) => {
         //pegar tarefas do usuário
         idUser && api.get(`/task/${idUser}`).then((response) => {
             setTasks(response.data);
@@ -82,7 +83,7 @@ const LogIn = () => {
                 handleSnackbar(true, error.response.data.message);
             }
         })
-    }, [idUser]);
+    }
 
     //Função para adicionar tarefas
     const handleTasks = () => {
@@ -95,6 +96,7 @@ const LogIn = () => {
 
         api.post("/task/add", addTask).then((response) => {
             handleSnackbar(true, response.data.message);
+            getTasks(idUser);
         }).catch((error) => {
             handleSnackbar(true, error.response.data.message);
         })
@@ -112,11 +114,23 @@ const LogIn = () => {
 
         api.put("/task/status", { idTask, value }).then((response) => {
             handleSnackbar(true, response.data.message);
+            getTasks(idUser)
         }).catch((error) => {
             handleSnackbar(true, error.response.data.message);
         });
 
-        
+    }
+
+    //Função para deletar tarefa
+    const handleDelete = (idTask) => {
+        console.log(idTask)
+        api.delete(`/task/delete/${idTask}`).then((response) => {
+            handleSnackbar(true, response.data.message);
+            getTasks(idUser);
+        }).catch((error) => {
+            handleSnackbar(true, error.response.data.message);
+        })
+
     }
 
     return (
@@ -210,14 +224,14 @@ const LogIn = () => {
                                 >
                                     <Checkbox
                                         color="primary"
-                                        onClick={(event) => event.stopPropagation()}
+                                        onClick={(event) => {event.stopPropagation()}}
                                         onFocus={(event) => event.stopPropagation()}
                                         onChange={(event) => handleChecked(event.target.checked, item._id)}
                                         checked={item.status}
                                     />
-                                    <p>
+                                    <h4>
                                         {item.title}
-                                    </p>
+                                    </h4>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Typography>
@@ -229,7 +243,7 @@ const LogIn = () => {
                                         <InfoIcon />
                                     </Tooltip>
                                     <Tooltip title="Deletar">
-                                        <IconButton>
+                                        <IconButton onClick={() => handleDelete(item._id)}>
                                             <DeleteIcon />
                                         </IconButton>
                                     </Tooltip>
