@@ -73,4 +73,24 @@ router.put("/status/", async (req, res) => {
 
 });
 
+//Rota para deletar tarefa
+router.delete("/delete/:idTask", async (req, res) => {
+    const {idTask} = req.params;
+
+    try {
+
+        if(!(await Tasks.findById(idTask))){
+            res.status(400).send({message: "Não existe tarefa com esse ID"})
+        }
+
+        await Tasks.deleteOne({_id: idTask})
+
+        return res.status(200).send({message: "Sucesso ao deletar Tarefa!"});
+
+    } catch (error) {
+        return res.status(400).send({ message: `Falha ao deletar tarefas!, ${error}` });
+    }
+});
+
+
 module.exports = app => app.use("/task", router);
