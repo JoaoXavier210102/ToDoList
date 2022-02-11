@@ -4,7 +4,7 @@
  
 ## :bulb: View of the project
 Build one project complete of ToDo List, with front-end, back-end and connection database. (This app is in portuguese)
-Project with focused in API, bacause i wanted only experience in nodeJS.
+Project with focused in API, bacause I wanted only experience in nodeJS.
 
 ## 👨‍💻 Tech Used
 ReatJs, NodeJS, MongoDb and JavaScript.
