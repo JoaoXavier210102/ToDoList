@@ -8,8 +8,6 @@ import {
     Grid,
     makeStyles,
     IconButton,
-    Avatar,
-    AppBar,
     Tooltip,
     Paper,
     TextField,
@@ -19,7 +17,6 @@ import {
     AccordionSummary,
     AccordionActions,
     Snackbar,
-    LinearProgress
 } from "@material-ui/core";
 
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -150,38 +147,31 @@ const LogIn = () => {
                 message={message}
             />
             <Container className={classes.container} maxWidth={false} disableGutters>
-                <AppBar position="relative">
-                    <Grid container className={classes.appBar}>
-                        <Grid item className={classes.profile}>
-                            <Link to="/edit" >
-                                <Tooltip title="Editar perfil" arrow>
-                                    <Avatar src="https://avatars.githubusercontent.com/u/81498473?s=400&u=c1b50d13d84a173a1d13fd442357d116571f85cf&v=4" alt="perfil" />
-                                </Tooltip>
-                            </Link>
-                            <Typography style={{ marginLeft: "10px", fontWeight: 600 }}>
-                                {name}
-                            </Typography>
-                        </Grid>
-                        <Grid item >
-                            <Link to="/">
-                                <Tooltip title="Início" arrow>
-                                    <IconButton color="secondary">
-                                        <HomeIcon />
-                                    </IconButton>
-                                </Tooltip>
-                            </Link>
-                        </Grid>
-                        <Grid item >
-                            <Link to="/login">
-                                <Tooltip title="Sair" arrow>
-                                    <IconButton color="secondary" onClick={() => { localStorage.removeItem(Token) }}>
-                                        <ExitToAppIcon />
-                                    </IconButton>
-                                </Tooltip>
-                            </Link>
-                        </Grid>
+                <Grid container className={classes.appBar}>
+                    <Grid item className={classes.profile}>
+                        <Typography style={{ marginLeft: "10px", fontWeight: 600 }} variant="h3" color="primary">
+                            {name}
+                        </Typography>
                     </Grid>
-                </AppBar>
+                    <Grid item >
+                        <Link to="/">
+                            <Tooltip title="Início" arrow>
+                                <IconButton color="secondary">
+                                    <HomeIcon />
+                                </IconButton>
+                            </Tooltip>
+                        </Link>
+                    </Grid>
+                    <Grid item >
+                        <Link to="/login">
+                            <Tooltip title="Sair" arrow>
+                                <IconButton color="secondary" onClick={() => { localStorage.removeItem(Token) }}>
+                                    <ExitToAppIcon />
+                                </IconButton>
+                            </Tooltip>
+                        </Link>
+                    </Grid>
+                </Grid>
                 <Container maxWidth={false} style={{ display: "grid", justifyContent: "center" }}>
                     <Paper style={{ width: "500px", marginTop: "100px", padding: "30px" }}>
                         <Grid container alignItems="center" spacing={3}>
@@ -224,7 +214,7 @@ const LogIn = () => {
                                 >
                                     <Checkbox
                                         color="primary"
-                                        onClick={(event) => {event.stopPropagation()}}
+                                        onClick={(event) => { event.stopPropagation() }}
                                         onFocus={(event) => event.stopPropagation()}
                                         onChange={(event) => handleChecked(event.target.checked, item._id)}
                                         checked={item.status}
