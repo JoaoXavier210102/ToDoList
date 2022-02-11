@@ -2,23 +2,28 @@
 
 ![Badge de status](http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge)
  
-## :bulb: Ideia do projeto
-Construir um toDo list completo, com front-end, back-end e conexão com banco de dados
+## :bulb: View of the project
+Build one project complete of ToDo List, with front-end, back-end and connection data base. (This app is in portuguese)
 
-## 👨‍💻 Tecnologias Usadas
+## 👨‍💻 Tech Used
 ReatJs, NodeJS, MongoDb.
 
-## ✔️ Experiência adquiridas nesse projeto: 
+## ✔️ Library, framework and dependencys used in the app: 
 
 **Back-End:**
 
 * Protocol HTTP: It's base of exchange of data between back-end and front-end;
+* Mongoose: Connection of the data base MongoDB;
 * CRUD: Routes of back-end for created, reader, updated and deleted;
 * ExpressJS: Framework Facilitating for do one API; 
-* JWT: Json Web Token, where 
-* 
+* JWT: Json Web Token it's one method of create Token for user, of that way user get be autenticated (log in and logout);
+* Nodemon: Dependecy for faciliting of developed, no is necessited of rebooting the server for to apply at changes;
+* Bcrypt: It's fantastic library for encripeted the password of user;
 
+**Front-End:**
 
-Foi meu primeiro contato com o nodeJS, é claro que já tinha ouvido falar sobre a tecnologia porém nunca tinha botado a mão na massa, nessa aplicação acabei me deparando com o protocolo HTTP, CRUD (Create, Read, Update and Delete), expressJS que é um framework facilitador para fazer uma API, JWT que é um gerador e autenticador de Token para o usuário conseguir ser autenticado e ter a permissão para entrar na aplicação, nodemon que é uma biblioteca para não necessitar ficar reiniciando o servidor a cada alteração no mesmo, bcrypt é uma biblioteca fantástica com ela conseguimos encriptografar senhas do usuário.
-	Parte do front acabei utilizando o reactJS que já estou levemente familiarizado, usei o material UI, uma biblioteca de designers prontos para usar em sua aplicação, isso facilita demais na hora do desenvolvimento ( não há necessidade de perder horas no CSS), o lado negativo dessa biblioteca é que fica tudo muito parecido com outras aplicações, caso queira algo único aconselho ir para o velho e bom css e fazer componentes do zero. Usei o axios para fazer as requisições para a API e ocorreu tudo sem muitas dificuldades, já que tenho uma breve experiência com o mesmo. Usei o react-router-dom para fazer as rotas da minha aplicação, agora na V6 mudou algumas coisas porém se acha tudo na documentação oficial deles.
-	Banco de dados utilizado foi o mongoDB 
+* Materia-ui: Library design for create the UI;
+* Axios: Used for facilited do requests for API;
+* React-router-dom: For create of the routes in front-end, no necessary refresh for changes pages;
+
+## 
