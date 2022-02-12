@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const url = "Place the URL connection data base here"
+const url = "Place the URL connection database here"
 
 mongoose.connect(url);
 mongoose.Promise = global.Promise;
