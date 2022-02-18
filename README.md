@@ -3,7 +3,7 @@
 ![Status Badge](http://img.shields.io/static/v1?label=STATUS&message=FINISHED&color=GREEN&style=for-the-badge)
  
 ## :bulb: View of the project
-Build one project complete of ToDo List, with front-end, back-end and connection database. (This app is in portuguese)
+Project complete of ToDo List, with front-end, back-end and connection database. (This app is in portuguese)
 Project with focused in API, bacause I wanted only experience in nodeJS.
 
 ## 👨‍💻 Tech Used
@@ -13,19 +13,19 @@ ReatJs, NodeJS, MongoDb and JavaScript.
 
 **Back-End:**
 
-* Protocol HTTP: It's base of exchange of data between back-end and front-end;
+* Protocol HTTP: It's a base of exchange data between back-end and front-end;
 * Mongoose: Connection of the database MongoDB;
-* CRUD: Routes of back-end for created, reader, updated and deleted;
-* ExpressJS: Framework Facilitating for do one API; 
-* JWT: Json Web Token it's one method of create Token for user, of that way user get be autenticated (log in and logout);
-* Nodemon: Dependecy for faciliting of developed, no is necessited of rebooting the server for to apply at changes;
-* Bcrypt: It's fantastic library for encripeted the password of user;
+* CRUD: Routes of back-end for create, read, update and delete;
+* ExpressJS: Framework for faciliting the created of a API; 
+* JWT: Utilited for create a Token of user;
+* Nodemon: Dependency for facilitating of developed, not is necessity of rebooting the server for to apply at changes;
+* Bcrypt: It's a fantastic library for encrypt the password of user;
 
 **Front-End:**
 
 * Materia-ui: Library design for create the UI;
 * Axios: Used for facilited do requests for API;
-* React-router-dom: For create of the routes in front-end, no necessary refresh for changes pages;
+* React-router-dom: For create of the routes in front-end, not necessary refresh for changes pages;
 
 ## 🖥 Demo
 
